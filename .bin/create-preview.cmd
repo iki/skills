@@ -1,0 +1,1 @@
+skill-seekers create -v -p quick -o "%~1" --name %*

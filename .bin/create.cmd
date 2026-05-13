@@ -1,0 +1,1 @@
+skill-seekers create -v -p comprehensive -o "%~1" --name %*
