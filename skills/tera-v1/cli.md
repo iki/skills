@@ -1,0 +1,27 @@
+# Tera v1 CLI Command Line Utility Reference
+
+The `tera` command line utility is used to generate output from an input template and data sources (JSON, TOML, YAML).
+
+## Usage
+
+```text
+Usage: tera [OPTIONS] --template <TEMPLATE> [CONTEXT]
+
+Arguments:
+  [CONTEXT]  Location of the context data. This file can be of the following type: json | toml | yaml. If you prefer to pass the data as stdin, use `--stdin`
+
+Options:
+  -t, --template <TEMPLATE>          Location of the template
+  -i, --include                      This flag tells the command to parse all templates found in the same path where the given template is located [aliases: inherit]
+      --include-path <INCLUDE_PATH>  Option to define a different path from which search and parse templates [aliases: inherit-path]
+  -s, --stdin                        The context data can be passed using stdin
+  -e, --env                          If true, the current ENV will be appended to the data under the --env-key key
+      --env-key <ENV_KEY>            By default, if --env is set, the environment variables will be attached at the root of the context. This is convenient but may end up conflicting with your data. To prevent collisions, you can provide a custom key with this option
+      --env-first                    By default, the context is made of the data you pass and the ENV is applied afterwards. Setting this option will apply the ENV first. This is interesting if you prefer your data to override the ENV
+      --fail-on-collision            if you prefer your data to override the ENV
+      --env-only                     If you want to solely use the ENV as context, you may pass this option. This will prevent an error about no context being passed to be raised
+  -o, --out <OUT>                    Optional output file. If not passed, using stdout
+  -a, --escape                       Auto-escape rendered content. This is useful for HTML output
+  -h, --help                         Print help
+  -V, --version                      Print version
+```
