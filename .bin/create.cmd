@@ -1,1 +1,1 @@
-skill-seekers create -v -p comprehensive -o "%~1" --name %*
+skill-seekers create -v -p comprehensive -o "%~dp0..\skills\%~1" --name %*

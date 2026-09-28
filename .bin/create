@@ -1,3 +1,5 @@
 #!/bin/sh
 
-skill-seekers create -v -p comprehensive -o "$1" --name "$@"
+__cmd="${BASH_SOURCE[0]}"; __bin="${__cmd%[\\/]*}"; [ "$__bin" != "$__cmd" ] || __bin="$PWD"; __ski="$__bin/../skills"
+
+skill-seekers create -v -p comprehensive -o "$__ski/$1" --name "$@"
